@@ -76,19 +76,20 @@
     </div>
 
     <script>
-        // --- ТОХИРГОО ---
+        // --- ТОХИРГООГ ЭНД ӨӨРЧЛӨӨРӨЙ ---
         const myIG = "eazjrgal"; // Өөрийн IG нэр
         const uyerhsenUdur = "0621"; // Нууц үг (YYYY.MM.DD)
-        // ----------------
+        // -------------------------------
 
         function showStep(step) {
-            ['ask', 'sad', 'options', 'password', 'final'].forEach(s => document.getElementById('step-' + s).style.display = 'none');
+            const sections = ['ask', 'sad', 'options', 'password', 'final'];
+            sections.forEach(s => document.getElementById('step-' + s).style.display = 'none');
             document.getElementById('step-' + step).style.display = 'block';
         }
 
         function checkPassword() {
-            if(document.getElementById('passCode').value === uyerhsenUdur) {
-                // ЭНД hot.gif-ИЙГ ХОЛБОСОН
+            const input = document.getElementById('passCode').value;
+            if(input === uyerhsenUdur) {
                 finish('Обо Майжий 🔥', 'hot.gif', 'За, энэ бол зөвхөн бид хоёрын нууц... Обо майжий хийж халуухан байна гэж найдаж байна! ❤️');
                 document.getElementById('final-header').innerText = "НУУЦ БОЛЗОО! 🔥";
             } else {
@@ -100,10 +101,12 @@
             showStep('final');
             document.getElementById('final-cat').src = gifUrl;
             document.getElementById('personal-message').innerText = message;
-            for(let i=0; i<30; i++) createHeart();
+            for(let i=0; i<35; i++) createHeart();
         }
 
-        function openInstagram() { window.location.href = `https://www.instagram.com/${myIG}/`; }
+        function openInstagram() { 
+            window.location.href = `https://www.instagram.com/${myIG}/`; 
+        }
 
         function createHeart() {
             const heart = document.createElement('div');
@@ -112,8 +115,12 @@
             heart.style.left = Math.random() * 100 + 'vw';
             heart.style.top = '-20px';
             heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+            heart.style.zIndex = '1000';
             document.body.appendChild(heart);
-            heart.animate([{ transform: 'translateY(0)', opacity: 1 }, { transform: `translateY(100vh)`, opacity: 0 }], { duration: 3000 });
+            heart.animate([
+                { transform: 'translateY(0)', opacity: 1 },
+                { transform: `translateY(110vh)`, opacity: 0 }
+            ], { duration: 3000, easing: 'linear' });
             setTimeout(() => heart.remove(), 3000);
         }
     </script>

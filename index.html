@@ -39,15 +39,14 @@
             cursor: pointer; font-family: 'Pixelify Sans', sans-serif;
             transition: 0.2s; margin: 10px 5px; font-weight: bold; font-size: 1.1rem;
         }
-        .yes-btn { background: var(--hot-pink); color: white; min-width: 140px; box-shadow: 0 4px 15px rgba(255,77,109,0.4); }
+        .yes-btn { background: var(--hot-pink); color: white; min-width: 140px; }
         .no-btn { background: #333; color: #999; min-width: 100px; }
         
         .option-card {
             background: rgba(255, 255, 255, 0.05); padding: 15px;
             border-radius: 15px; cursor: pointer; margin-bottom: 12px;
-            border: 1px solid rgba(255, 77, 109, 0.2); text-align: left; transition: 0.3s;
+            border: 1px solid rgba(255, 77, 109, 0.2); text-align: left;
         }
-        .option-card:hover { border-color: var(--gold); transform: scale(1.02); }
 
         .mini-letter {
             background: rgba(255, 255, 255, 0.95); color: #222;
@@ -68,8 +67,8 @@
 
     <div id="letter-container">
         <div id="step-ask">
-            <h1 style="font-size: 1.6rem; margin-bottom: 10px;">Will you be my Valentine?</h1>
-            <img src="https://media.tenor.com/T_7U96N9G78AAAAi/cute-cat.gif" class="cat-img" alt="Cute Cat">
+            <h1 style="font-size: 1.6rem;">Will you be my Valentine?</h1>
+            <img src="https://c.tenor.com/T_7U96N9G78AAAAC/cute-cat.gif" class="cat-img" alt="Cute Cat">
             <div style="display: flex; justify-content: center;">
                 <button class="btn yes-btn" onclick="showStep('options')">YES!</button>
                 <button class="btn no-btn" id="no-btn" ontouchstart="moveNo()" onmouseover="moveNo()">No</button>
@@ -77,31 +76,26 @@
         </div>
 
         <div id="step-options" style="display: none;">
-            <h2 style="color: var(--hot-pink); font-size: 1.4rem;">Баярлалаа! ❤️</h2>
-            <p style="margin-bottom: 20px;">Болзоогоо сонгоорой:</p>
-            <div class="option-card" onclick="finish('Кино & Пицца 🍕', 'https://media.tenor.com/fS6eNfL_Q_cAAAAi/mochi-cat.gif', 'Хоёулаа хамгийн дуртай киногоо үзээд, халуун пицца идээд тухтай суух гоё биш гэж үү? Хамгийн гоё дурсамж болох байх аа.')">🎬 Movie & Pizza Night</div>
-            <div class="option-card" onclick="finish('Оройн хоол 🕯️', 'https://media.tenor.com/m68v-3_OExUAAAAi/cat-dinner.gif', 'Гоё газар чамтайгаа тухтай ярилцаад, лааны гэрэлд гоё оройн хоол идэх романтик байх болно гэдэгт итгэлтэй байна.')">🕯️ Romantic Dinner</div>
-            <div class="option-card" onclick="finish('Гэртээ тоглох 🎮', 'https://media.tenor.com/yS42K5_j_o8AAAAi/cat-computer.gif', 'Хоёулаа гэртээ хамтдаа тоглоом тоглоод, хөгжилтэй байх нь илүү тухтай. Чамтай байхад хаана ч байсан жаргалтай.')">🎮 Gaming & Chill</div>
+            <h2 style="color: var(--hot-pink);">Баярлалаа! ❤️</h2>
+            <p>Болзоогоо сонгоорой:</p>
+            <div class="option-card" onclick="finish('Кино & Пицца 🍕', 'https://c.tenor.com/fS6eNfL_Q_cAAAAC/mochi-cat.gif', 'Хоёулаа хамгийн дуртай киногоо үзээд, халуун пицца идээд тухтай суух гоё биш гэж үү?')">🎬 Movie & Pizza Night</div>
+            <div class="option-card" onclick="finish('Оройн хоол 🕯️', 'https://c.tenor.com/m68v-3_OExUAAAAC/cat-dinner.gif', 'Гоё газар чамтайгаа тухтай ярилцаад, лааны гэрэлд гоё оройн хоол идэх романтик байх болно.')">🕯️ Romantic Dinner</div>
+            <div class="option-card" onclick="finish('Гэртээ тоглох 🎮', 'https://c.tenor.com/yS42K5_j_o8AAAAC/cat-computer.gif', 'Гэртээ хамтдаа тоглоом тоглоод, хөгжилтэй байх нь илүү тухтай. Чамтай байхад хаана ч байсан жаргалтай.')">🎮 Gaming & Chill</div>
         </div>
 
         <div id="step-final" style="display: none;">
-            <h2 style="font-size: 1.5rem;">Тохирлоо! ❤️</h2>
+            <h2>Тохирлоо! ❤️</h2>
             <img id="final-cat" src="" class="cat-img">
             <div id="personal-message" class="mini-letter"></div>
-            <p id="final-choice" style="color: var(--hot-pink); font-weight: bold; font-size: 1.2rem;"></p>
+            <p id="final-choice" style="color: var(--hot-pink); font-weight: bold;"></p>
             <p><strong>Болзох газар:</strong> Манайд!!! ✨</p>
-            
-            <div id="ig-hint" style="margin-top: 20px; padding: 10px; border-top: 1px solid rgba(255,255,255,0.1);">
-                <button class="btn yes-btn" style="width: 100%; margin: 0;" onclick="openInstagram()">📩 Надад мэдэгдэх (IG)</button>
-                <p style="font-size: 0.8rem; color: #ffd700; margin-top: 10px;">Скриншот хийхээ мартав аа! 😉</p>
-            </div>
-            
+            <div id="ig-hint"></div>
             <button class="btn back-btn" onclick="showStep('options')">← Бусад болзоог харах</button>
         </div>
     </div>
 
     <script>
-        // ӨӨРИЙН IG НЭРЭЭ ЭНД БИЧЭЭРЭЙ
+        // IG НЭРЭЭ ЭНД БИЧЭЭРЭЙ
         const myIG = "eazjrgal"; 
 
         function showStep(step) {
@@ -128,11 +122,13 @@
             document.getElementById('final-cat').src = gifUrl;
             document.getElementById('personal-message').innerText = message;
             
+            document.getElementById('ig-hint').innerHTML = `
+                <button class="btn yes-btn" style="width: 100%; margin: 0;" onclick="window.location.href='https://www.instagram.com/${myIG}/'">
+                    📩 Надад мэдэгдэх (IG)
+                </button>
+                <p style="font-size: 0.8rem; color: #ffd700; margin-top: 10px;">Скриншот хийхээ мартав аа! 😉</p>
+            `;
             for(let i=0; i<30; i++) createHeart();
-        }
-
-        function openInstagram() {
-            window.location.href = `https://www.instagram.com/${myIG}/`;
         }
 
         function createHeart() {
@@ -142,7 +138,6 @@
             heart.style.left = Math.random() * 100 + 'vw';
             heart.style.top = '-20px';
             heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
-            heart.style.zIndex = '1000';
             document.body.appendChild(heart);
             heart.animate([{ transform: 'translateY(0)', opacity: 1 }, { transform: `translateY(100vh)`, opacity: 0 }], { duration: 3000 });
             setTimeout(() => heart.remove(), 3000);

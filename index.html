@@ -3,132 +3,144 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>♡ Захиа ♡</title>
+    <title>♡ My Pixel Valentine ♡</title>
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet" />
     <style>
         :root {
-            --dark-pink: #4a001f;
+            --main-pink: #ffafcc;
             --hot-pink: #ff4d6d;
-            --gold: #ffd700;
+            --bg-dot: #ffe5ec;
         }
 
         body {
             margin: 0; padding: 0; min-height: 100vh;
             display: flex; justify-content: center; align-items: center;
-            background: radial-gradient(circle, #4a001f 0%, #1a000d 100%);
+            background-color: var(--bg-dot);
+            background-image: radial-gradient(var(--main-pink) 2px, transparent 2px);
+            background-size: 30px 30px;
             font-family: 'Pixelify Sans', sans-serif;
-            color: white; overflow: hidden;
+            overflow: hidden;
             touch-action: manipulation;
         }
 
-        #envelope-container { text-align: center; cursor: pointer; width: 100%; }
-        #envelope-icon { font-size: 80px; animation: float 3s infinite ease-in-out; }
-        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
-
-        #letter-container {
-            display: none; width: 85%; max-width: 360px;
-            background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px);
-            padding: 30px; border-radius: 30px; border: 2px solid var(--hot-pink);
-            text-align: center; box-shadow: 0 0 40px rgba(255, 77, 109, 0.4);
+        .window {
+            background: white; border: 4px solid var(--hot-pink);
+            box-shadow: 8px 8px 0px rgba(251, 111, 146, 0.3);
+            width: 90%; max-width: 380px; border-radius: 12px; overflow: hidden;
+            z-index: 10;
         }
 
-        .cat-img { width: 100%; max-width: 180px; height: auto; margin: 20px 0; border-radius: 20px; box-shadow: 0 0 15px rgba(255,77,109,0.3); }
-
-        .btn {
-            padding: 15px 30px; border-radius: 50px; border: none;
-            cursor: pointer; font-family: 'Pixelify Sans', sans-serif;
-            transition: 0.2s; margin: 10px 5px; font-weight: bold; font-size: 1.1rem;
+        .title-bar {
+            background: var(--hot-pink); color: white; padding: 10px 15px;
+            display: flex; justify-content: space-between; font-weight: bold;
         }
-        .yes-btn { background: var(--hot-pink); color: white; min-width: 140px; }
-        .no-btn { background: #333; color: #999; min-width: 100px; }
+
+        .content { padding: 30px 20px; text-align: center; }
+        .cat-img { width: 180px; height: 180px; object-fit: contain; margin-bottom: 20px; border-radius: 10px; }
         
+        h1 { color: var(--hot-pink); font-size: 1.6rem; margin: 0 0 20px 0; }
+
+        .btn-container { display: flex; justify-content: center; gap: 15px; }
+        .btn {
+            padding: 12px 25px; border: 3px solid black; cursor: pointer;
+            font-family: 'Pixelify Sans', sans-serif; font-size: 1.2rem;
+            font-weight: bold; box-shadow: 4px 4px 0px black; transition: 0.1s;
+        }
+        .btn:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0px black; }
+        .yes-btn { background: #95d5b2; color: black; }
+        .no-btn { background: #ff85a1; color: black; }
+
+        /* "No" дарахад гарах том товч */
+        .huge-yes {
+            width: 100%; font-size: 2rem; padding: 25px;
+            background: var(--hot-pink); color: white; margin-top: 20px;
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+
         .option-card {
-            background: rgba(255, 255, 255, 0.05); padding: 15px;
-            border-radius: 15px; cursor: pointer; margin-bottom: 12px;
-            border: 1px solid rgba(255, 77, 109, 0.2); text-align: left;
+            background: white; padding: 12px; border-radius: 10px;
+            cursor: pointer; margin-bottom: 10px; border: 2px solid var(--main-pink);
+            text-align: left; color: var(--hot-pink); transition: 0.3s;
+        }
+        .option-card:hover { background: var(--bg-dot); }
+
+        .back-link {
+            display: block; margin-top: 20px; color: var(--hot-pink);
+            text-decoration: underline; cursor: pointer; font-size: 0.9rem;
         }
 
         .mini-letter {
-            background: rgba(255, 255, 255, 0.95); color: #222;
-            padding: 15px; border-radius: 15px; margin: 15px 0;
-            font-size: 0.95rem; line-height: 1.5; border-left: 5px solid var(--hot-pink);
-            text-align: left;
+            background: #fff0f3; color: #333; padding: 15px;
+            border-radius: 10px; border: 2px dashed var(--hot-pink);
+            margin: 15px 0; text-align: left; font-size: 0.9rem;
         }
-
-        .back-btn { background: none; color: var(--gold); border: 1px solid var(--gold); margin-top: 20px; font-size: 0.8rem; padding: 10px 20px; }
     </style>
 </head>
 <body>
 
-    <div id="envelope-container" onclick="showStep('ask')">
-        <div id="envelope-icon">💌</div>
-        <p>Huurhun ohind huurhun zahia...</p>
-    </div>
-
-    <div id="letter-container">
-        <div id="step-ask">
-            <h1 style="font-size: 1.6rem;">Will you be my Valentine?</h1>
-            <img src="https://c.tenor.com/T_7U96N9G78AAAAC/cute-cat.gif" class="cat-img" alt="Cute Cat">
-            <div style="display: flex; justify-content: center;">
-                <button class="btn yes-btn" onclick="showStep('options')">YES!</button>
-                <button class="btn no-btn" id="no-btn" ontouchstart="moveNo()" onmouseover="moveNo()">No</button>
+    <div class="window">
+        <div class="title-bar"><span>LOVE</span><span>_ □ X</span></div>
+        <div class="content">
+            <div id="step-ask">
+                <div style="color: var(--hot-pink); margin-bottom: 5px;">♥ ♥ ♥</div>
+                <h1>Will you be my Valentine?</h1>
+                <img src="https://i.imgur.com/vA8Y72t.gif" class="cat-img">
+                <div class="btn-container">
+                    <button class="btn yes-btn" onclick="showStep('options')">YES</button>
+                    <button class="btn no-btn" onclick="showStep('sad')">NO</button>
+                </div>
             </div>
-        </div>
 
-        <div id="step-options" style="display: none;">
-            <h2 style="color: var(--hot-pink);">Баярлалаа! ❤️</h2>
-            <p>Болзоогоо сонгоорой:</p>
-            <div class="option-card" onclick="finish('Кино & Пицца 🍕', 'https://c.tenor.com/fS6eNfL_Q_cAAAAC/mochi-cat.gif', 'Хоёулаа хамгийн дуртай киногоо үзээд, халуун пицца идээд тухтай суух гоё биш гэж үү?')">🎬 Movie & Pizza Night</div>
-            <div class="option-card" onclick="finish('Оройн хоол 🕯️', 'https://c.tenor.com/m68v-3_OExUAAAAC/cat-dinner.gif', 'Гоё газар чамтайгаа тухтай ярилцаад, лааны гэрэлд гоё оройн хоол идэх романтик байх болно.')">🕯️ Romantic Dinner</div>
-            <div class="option-card" onclick="finish('Гэртээ тоглох 🎮', 'https://c.tenor.com/yS42K5_j_o8AAAAC/cat-computer.gif', 'Гэртээ хамтдаа тоглоом тоглоод, хөгжилтэй байх нь илүү тухтай. Чамтай байхад хаана ч байсан жаргалтай.')">🎮 Gaming & Chill</div>
-        </div>
+            <div id="step-sad" style="display: none;">
+                <h1 style="color: #666;">Нээрээ гэж үү?... 💔</h1>
+                <img src="https://i.imgur.com/9v6vM9W.gif" class="cat-img">
+                <p style="color: var(--hot-pink);">Зүрх минь өвдөж байна...</p>
+                <button class="btn huge-yes" onclick="showStep('options')">ЗА ЗА, ТИЙМ!</button>
+                <span class="back-link" onclick="showStep('ask')">Буцах</span>
+            </div>
 
-        <div id="step-final" style="display: none;">
-            <h2>Тохирлоо! ❤️</h2>
-            <img id="final-cat" src="" class="cat-img">
-            <div id="personal-message" class="mini-letter"></div>
-            <p id="final-choice" style="color: var(--hot-pink); font-weight: bold;"></p>
-            <p><strong>Болзох газар:</strong> Манайд!!! ✨</p>
-            <div id="ig-hint"></div>
-            <button class="btn back-btn" onclick="showStep('options')">← Бусад болзоог харах</button>
+            <div id="step-options" style="display: none;">
+                <h1>Баярлалаа! ❤️</h1>
+                <img src="https://i.imgur.com/6o7B3B0.gif" class="cat-img">
+                <p style="margin-bottom: 15px;">Болзоогоо сонгоорой:</p>
+                <div class="option-card" onclick="finish('Кино & Пицца 🍕', 'https://i.imgur.com/vA8Y72t.gif', 'Хоёулаа хамгийн дуртай киногоо үзээд, халуун пицца идээд тухтай суух гоё биш гэж үү?')">🎬 Movie & Pizza Night</div>
+                <div class="option-card" onclick="finish('Оройн хоол 🕯️', 'https://i.imgur.com/6o7B3B0.gif', 'Гоё газар чамтайгаа тухтай ярилцаад, лааны гэрэлд гоё оройн хоол идэх романтик байх болно.')">🕯️ Romantic Dinner</div>
+                <span class="back-link" onclick="showStep('ask')">← Буцах</span>
+            </div>
+
+            <div id="step-final" style="display: none;">
+                <h1>Тохирлоо! ❤️</h1>
+                <img id="final-cat" src="" class="cat-img">
+                <div id="personal-message" class="mini-letter"></div>
+                <p style="color: var(--hot-pink); font-weight: bold;">Болзох газар: Манайд!!! ✨</p>
+                <button class="btn yes-btn" style="width: 100%;" onclick="openInstagram()">📩 Надад IG-ээр хэлээрэй</button>
+                <span class="back-link" onclick="showStep('options')">← Өөр болзоо харах</span>
+            </div>
         </div>
     </div>
 
     <script>
-        // IG НЭРЭЭ ЭНД БИЧЭЭРЭЙ
-        const myIG = "eazjrgal"; 
+        // ӨӨРИЙН IG НЭРЭЭ ЭНД БИЧЭЭРЭЙ
+        const myIG = "your_username"; 
 
         function showStep(step) {
-            document.getElementById('envelope-container').style.display = 'none';
-            document.getElementById('letter-container').style.display = 'block';
-            document.getElementById('step-ask').style.display = (step === 'ask') ? 'block' : 'none';
-            document.getElementById('step-options').style.display = (step === 'options') ? 'block' : 'none';
+            document.getElementById('step-ask').style.display = 'none';
+            document.getElementById('step-sad').style.display = 'none';
+            document.getElementById('step-options').style.display = 'none';
             document.getElementById('step-final').style.display = 'none';
-        }
-
-        function moveNo() {
-            const btn = document.getElementById('no-btn');
-            const x = Math.random() * (window.innerWidth - btn.offsetWidth);
-            const y = Math.random() * (window.innerHeight - btn.offsetHeight);
-            btn.style.position = 'fixed';
-            btn.style.left = x + 'px';
-            btn.style.top = y + 'px';
+            document.getElementById('step-' + step).style.display = 'block';
         }
 
         function finish(choice, gifUrl, message) {
-            document.getElementById('step-options').style.display = 'none';
-            document.getElementById('step-final').style.display = 'block';
-            document.getElementById('final-choice').innerText = "Сонголт: " + choice;
+            showStep('final');
             document.getElementById('final-cat').src = gifUrl;
             document.getElementById('personal-message').innerText = message;
-            
-            document.getElementById('ig-hint').innerHTML = `
-                <button class="btn yes-btn" style="width: 100%; margin: 0;" onclick="window.location.href='https://www.instagram.com/${myIG}/'">
-                    📩 Надад мэдэгдэх (IG)
-                </button>
-                <p style="font-size: 0.8rem; color: #ffd700; margin-top: 10px;">Скриншот хийхээ мартав аа! 😉</p>
-            `;
             for(let i=0; i<30; i++) createHeart();
+        }
+
+        function openInstagram() {
+            window.location.href = `https://www.instagram.com/${myIG}/`;
         }
 
         function createHeart() {

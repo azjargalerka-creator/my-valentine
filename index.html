@@ -33,7 +33,7 @@
             <div id="step-ask">
                 <div style="color: var(--hot-pink); margin-bottom: 5px;">♥ ♥ ♥</div>
                 <h1>Will you be my Valentine?</h1>
-                <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2Z4NnB0N3p6ZndxZXI5eHhodm9qdzN3eHh4eHh4eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/c76IJLufpNUMo/giphy.gif" class="cat-img">
+                <img src="https://media.tenor.com/X_vT91_N678AAAAi/bubu-dudu-bubu.gif" class="cat-img">
                 <div class="btn-container">
                     <button class="btn yes-btn" onclick="showStep('options')">YES</button>
                     <button class="btn no-btn" onclick="showStep('sad')">NO</button>
@@ -41,17 +41,17 @@
             </div>
             <div id="step-sad" style="display: none;">
                 <h1 style="color: #666;">Нээрээ гэж үү?... 💔</h1>
-                <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2Z4NnB0N3p6ZndxZXI5eHhodm9qdzN3eHh4eHh4eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/On7VzRcn_mYAAAAi/giphy.gif" class="cat-img">
+                <img src="https://media.tenor.com/Y72_Jt325kUAAAAi/bear-sad.gif" class="cat-img">
                 <p style="color: var(--hot-pink);">Зүрх минь өвдөж байна...</p>
                 <button class="btn huge-yes" onclick="showStep('options')">ЗА ЗА, ТИЙМ!</button>
                 <span class="back-link" onclick="showStep('ask')">Буцах</span>
             </div>
             <div id="step-options" style="display: none;">
                 <h1>Баярлалаа! ❤️</h1>
-                <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3p6bm9nd2p6eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/MDJ9IbxxvDUQM/giphy.gif" class="cat-img">
+                <img src="https://media.tenor.com/y1XNf97Xp7sAAAAi/milk-and-mocha.gif" class="cat-img">
                 <p style="margin-bottom: 15px;">Болзоогоо сонгоорой:</p>
-                <div class="option-card" onclick="finish('Кино & Пицца 🍕', 'https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3p6bm9nd2p6eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/vFKqnCdLPNOKc/giphy.gif', 'Хоёулаа хамгийн дуртай киногоо үзээд, халуун пицца идэх хамгийн гоё!')">🎬 Movie & Pizza Night</div>
-                <div class="option-card" onclick="finish('Оройн хоол 🕯️', 'https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3p6bm9nd2p6eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/11s7Ke7jcNxCHS/giphy.gif', 'Гоё газар чамтайгаа тухтай ярилцаад, оройн хоол идэх романтик байх болно.')">🕯️ Romantic Dinner</div>
+                <div class="option-card" onclick="finish('Кино & Пицца 🍕', 'https://media.tenor.com/fS6eNfL_Q_cAAAAi/mochi-cat.gif', 'Хоёулаа хамгийн дуртай киногоо үзээд, халуун пицца идэх хамгийн гоё!')">🎬 Movie & Pizza Night</div>
+                <div class="option-card" onclick="finish('Оройн хоол 🕯️', 'https://media.tenor.com/m68v-3_OExUAAAAC/cat-dinner.gif', 'Гоё газар чамтайгаа тухтай ярилцаад, оройн хоол идэх романтик байх болно.')">🕯️ Romantic Dinner</div>
                 <span class="back-link" onclick="showStep('ask')">← Буцах</span>
             </div>
             <div id="step-final" style="display: none;">
@@ -64,7 +64,7 @@
         </div>
     </div>
     <script>
-        const myIG = "your_username"; // <--- ӨӨРИЙН IG НЭРЭЭ ЭНД БИЧЭЭРЭЙ
+        const myIG = "eazjrgal"; // <--- ЭНД ӨӨРИЙН IG НЭРЭЭ БИЧЭЭРЭЙ
         function showStep(step) { document.getElementById('step-ask').style.display = 'none'; document.getElementById('step-sad').style.display = 'none'; document.getElementById('step-options').style.display = 'none'; document.getElementById('step-final').style.display = 'none'; document.getElementById('step-' + step).style.display = 'block'; }
         function finish(choice, gifUrl, message) { showStep('final'); document.getElementById('final-cat').src = gifUrl; document.getElementById('personal-message').innerText = message; for(let i=0; i<30; i++) createHeart(); }
         function openInstagram() { window.location.href = `https://www.instagram.com/${myIG}/`; }

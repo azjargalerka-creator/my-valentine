@@ -8,29 +8,39 @@
     <style>
         :root { --main-pink: #ffafcc; --hot-pink: #ff4d6d; --bg-dot: #ffe5ec; --purple: #9d4edd; }
         body { margin: 0; padding: 0; min-height: 100vh; display: flex; justify-content: center; align-items: center; background-color: var(--bg-dot); background-image: radial-gradient(var(--main-pink) 2px, transparent 2px); background-size: 30px 30px; font-family: 'Pixelify Sans', sans-serif; overflow-x: hidden; touch-action: manipulation; }
+        
         .window { background: white; border: 4px solid var(--hot-pink); box-shadow: 8px 8px 0px rgba(251, 111, 146, 0.3); width: 90%; max-width: 400px; border-radius: 12px; overflow: hidden; z-index: 10; margin: 20px 0; }
         .title-bar { background: var(--hot-pink); color: white; padding: 10px 15px; display: flex; justify-content: space-between; font-weight: bold; }
+        
         .content { padding: 25px 15px; text-align: center; }
         .cat-img { width: 170px; height: 170px; object-fit: contain; margin-bottom: 15px; border-radius: 10px; background: #fff0f3; }
         h1 { color: var(--hot-pink); font-size: 1.4rem; margin: 0 0 15px 0; }
-        .btn { padding: 12px 20px; border: 3px solid black; cursor: pointer; font-family: 'Pixelify Sans', sans-serif; font-size: 1.1rem; font-weight: bold; box-shadow: 4px 4px 0px black; transition: 0.1s; display: inline-block; }
+        
+        .btn { padding: 12px 20px; border: 3px solid black; cursor: pointer; font-family: 'Pixelify Sans', sans-serif; font-size: 1.1rem; font-weight: bold; box-shadow: 4px 4px 0px black; transition: 0.1s; display: inline-block; text-decoration: none; }
         .btn:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0px black; }
         .yes-btn { background: #95d5b2; color: black; }
         .no-btn { background: #ff85a1; color: black; }
-        .huge-yes { width: 100%; font-size: 1.6rem; padding: 15px; background: var(--hot-pink); color: white; margin-top: 15px; animation: pulse 1.5s infinite; }
+        
+        .huge-yes { width: 100%; font-size: 1.6rem; padding: 15px; background: var(--hot-pink); color: white; margin-top: 15px; animation: pulse 1.5s infinite; border: 3px solid black; }
         @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        
         .option-card { background: white; padding: 12px; border-radius: 10px; cursor: pointer; margin-bottom: 10px; border: 2px solid var(--main-pink); text-align: left; color: var(--hot-pink); font-size: 0.95rem; }
         .secret-card { border: 2px dashed var(--purple); color: var(--purple); background: #f3e5f5; }
+        
         .mini-letter { background: #fff0f3; color: #333; padding: 15px; border-radius: 10px; border: 1px dashed var(--hot-pink); margin: 15px 0; text-align: left; font-size: 0.85rem; line-height: 1.4; }
         .back-link { display: block; margin-top: 15px; color: var(--hot-pink); text-decoration: underline; cursor: pointer; font-size: 0.85rem; }
-        .pass-input { width: 80%; padding: 12px; border: 3px solid var(--purple); font-family: 'Pixelify Sans', sans-serif; font-size: 1.1rem; text-align: center; margin-bottom: 15px; border-radius: 8px; }
+        
+        .pass-input { width: 85%; padding: 12px; border: 3px solid var(--purple); font-family: 'Pixelify Sans', sans-serif; font-size: 1.1rem; text-align: center; margin-bottom: 15px; border-radius: 8px; outline: none; }
     </style>
 </head>
 <body>
+
     <div class="window">
-        <div class="title-bar"><span>LOVE</span><span>_ □ X</span></div>
+        <div class="title-bar"><span>LOVE.EXE</span><span>_ □ X</span></div>
         <div class="content">
+            
             <div id="step-ask">
+                <div style="color: var(--hot-pink); margin-bottom: 5px;">♥ ♥ ♥</div>
                 <h1>Will you be my Valentine?</h1>
                 <img src="main.gif" class="cat-img">
                 <div style="display:flex; justify-content:center; gap:15px;">
@@ -42,6 +52,7 @@
             <div id="step-sad" style="display: none;">
                 <h1>Нээрээ гэж үү?... 💔</h1>
                 <img src="sad.gif" class="cat-img">
+                <p style="color: var(--hot-pink); font-size: 0.9rem;">Зүрх минь өвдөж байна...</p>
                 <button class="btn huge-yes" onclick="showStep('options')">ЗА ЗА, ТИЙМ!</button>
                 <span class="back-link" onclick="showStep('ask')">Буцах</span>
             </div>
@@ -53,15 +64,15 @@
                 <div class="option-card" onclick="finish('Romantic Dinner 🕯️', 'dinner.gif', 'Гоё газар чамтайгаа тухтай ярилцаад, оройн хоол идье.')">🕯️ Romantic Dinner</div>
                 <div class="option-card" onclick="finish('Karaoke Night 🎤', 'karaoke.gif', 'Хоёулаа дуртай дуугаа дуулж хашхиралдаж стрессээ тайлах уу?')">🎤 Karaoke & Fun</div>
                 <div class="option-card secret-card" onclick="showStep('password')">🔒 НУУЦ БОЛЗОО (Locked)</div>
-                <span class="back-link" onclick="showStep('ask')">← Буцах</span>
+                <span class="back-link" onclick="showStep('ask')">← Асуулт руу буцах</span>
             </div>
 
             <div id="step-password" style="display: none;">
                 <h1 style="color: var(--purple);">Нууц код 🔒</h1>
                 <p style="font-size: 0.8rem; margin-bottom: 10px;">Бид хоёрын анх үерхсэн өдөр?<br>(Жишээ: 2024.01.20)</p>
                 <input type="text" id="passCode" class="pass-input" placeholder="YYYY.MM.DD">
-                <button class="btn yes-btn" style="background: var(--purple); color:white;" onclick="checkPassword()">НЭЭХ</button>
-                <span class="back-link" onclick="showStep('options')">Буцах</span>
+                <button class="btn yes-btn" style="background: var(--purple); color:white; width: 100%; max-width: none;" onclick="checkPassword()">НЭЭХ</button>
+                <span class="back-link" onclick="showStep('options')">Болзоонууд руу буцах</span>
             </div>
 
             <div id="step-final" style="display: none;">
@@ -70,26 +81,28 @@
                 <div id="personal-message" class="mini-letter"></div>
                 <p style="color: var(--hot-pink); font-weight: bold; margin-bottom: 15px;">Болзох газар: Манайд!!! ✨</p>
                 <button class="btn yes-btn" style="width: 100%; max-width: none;" onclick="openInstagram()">📩 Надад IG-ээр хэлээрэй</button>
-                <span class="back-link" onclick="showStep('options')">← Өөр болзоо харах</span>
+                <span class="back-link" onclick="showStep('options')">← Бусад болзоог харах</span>
             </div>
+
         </div>
     </div>
 
     <script>
-        // --- ТОХИРГООГ ЭНД ӨӨРЧЛӨӨРӨЙ ---
-        const myIG = "eazjrgal"; // Өөрийн IG нэр
-        const uyerhsenUdur = "0621"; // Нууц үг (YYYY.MM.DD)
-        // -------------------------------
+        // --- ⚠️ ТОХИРГОО: ЭНД ӨӨРИЙНХӨӨРӨӨ ЗАСААРАЙ ⚠️ ---
+        const myIG = "eazjrgal"; // Өөрийн IG нэрээ энд бич
+        const uyerhsenUdur = "0621"; // Үерхсэн өдөр (YYYY.MM.DD)
+        // ------------------------------------------------
 
         function showStep(step) {
-            const sections = ['ask', 'sad', 'options', 'password', 'final'];
-            sections.forEach(s => document.getElementById('step-' + s).style.display = 'none');
+            const steps = ['ask', 'sad', 'options', 'password', 'final'];
+            steps.forEach(s => document.getElementById('step-' + s).style.display = 'none');
             document.getElementById('step-' + step).style.display = 'block';
         }
 
         function checkPassword() {
             const input = document.getElementById('passCode').value;
             if(input === uyerhsenUdur) {
+                // Нууц болзоо зөв бол hot.gif уншина
                 finish('Обо Майжий 🔥', 'hot.gif', 'За, энэ бол зөвхөн бид хоёрын нууц... Обо майжий хийж халуухан байна гэж найдаж байна! ❤️');
                 document.getElementById('final-header').innerText = "НУУЦ БОЛЗОО! 🔥";
             } else {
@@ -101,6 +114,7 @@
             showStep('final');
             document.getElementById('final-cat').src = gifUrl;
             document.getElementById('personal-message').innerText = message;
+            // Зүрх унах анимаци
             for(let i=0; i<35; i++) createHeart();
         }
 

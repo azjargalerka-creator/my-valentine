@@ -69,7 +69,7 @@
 
             <div id="step-password" style="display: none;">
                 <h1 style="color: var(--purple);">Нууц код 🔒</h1>
-                <p style="font-size: 0.8rem; margin-bottom: 10px;">Бид хоёрын анх үерхсэн өдөр?<br>(Жишээ: 2024.01.20)</p>
+                <p style="font-size: 0.8rem; margin-bottom: 10px;">Бид хоёрын анх үерхсэн өдөр?<br>(Жишээ: 0000)</p>
                 <input type="text" id="passCode" class="pass-input" placeholder="YYYY.MM.DD">
                 <button class="btn yes-btn" style="background: var(--purple); color:white; width: 100%; max-width: none;" onclick="checkPassword()">НЭЭХ</button>
                 <span class="back-link" onclick="showStep('options')">Болзоонууд руу буцах</span>
@@ -79,7 +79,7 @@
                 <h1 id="final-header">Тохирлоо! ❤️</h1>
                 <img id="final-cat" src="" class="cat-img">
                 <div id="personal-message" class="mini-letter"></div>
-                <p style="color: var(--hot-pink); font-weight: bold; margin-bottom: 15px;">Болзох газар: Манайд!!! ✨</p>
+                <p style="color: var(--hot-pink); font-weight: bold; margin-bottom: 15px;">Болзох газар: Бидний Дуртай газар ✨</p>
                 <button class="btn yes-btn" style="width: 100%; max-width: none;" onclick="openInstagram()">📩 Надад IG-ээр хэлээрэй</button>
                 <span class="back-link" onclick="showStep('options')">← Бусад болзоог харах</span>
             </div>
@@ -103,7 +103,7 @@
             const input = document.getElementById('passCode').value;
             if(input === uyerhsenUdur) {
                 // Нууц болзоо зөв бол hot.gif уншина
-                finish('Обо Майжий 🔥', 'hot.gif', 'За, энэ бол зөвхөн бид хоёрын нууц... Обо майжий хийж халуухан байна гэж найдаж байна! ❤️');
+                finish('Обо Майжий 🔥', 'hot.gif', 'За, энэ бол зөвхөн бид хоёрын нууц... Обо майжий ххэ халуухан байна гэж найдаж байна! ❤️');
                 document.getElementById('final-header').innerText = "НУУЦ БОЛЗОО! 🔥";
             } else {
                 alert("Буруу байна, дахиад бодоорой! 😉");
@@ -140,3 +140,4 @@
     </script>
 </body>
 </html>
+

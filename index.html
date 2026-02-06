@@ -6,154 +6,69 @@
     <title>♡ My Pixel Valentine ♡</title>
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet" />
     <style>
-        :root {
-            --main-pink: #ffafcc;
-            --hot-pink: #ff4d6d;
-            --bg-dot: #ffe5ec;
-        }
-
-        body {
-            margin: 0; padding: 0; min-height: 100vh;
-            display: flex; justify-content: center; align-items: center;
-            background-color: var(--bg-dot);
-            background-image: radial-gradient(var(--main-pink) 2px, transparent 2px);
-            background-size: 30px 30px;
-            font-family: 'Pixelify Sans', sans-serif;
-            overflow: hidden;
-            touch-action: manipulation;
-        }
-
-        .window {
-            background: white; border: 4px solid var(--hot-pink);
-            box-shadow: 8px 8px 0px rgba(251, 111, 146, 0.3);
-            width: 90%; max-width: 380px; border-radius: 12px; overflow: hidden;
-            z-index: 10;
-        }
-
-        .title-bar {
-            background: var(--hot-pink); color: white; padding: 10px 15px;
-            display: flex; justify-content: space-between; font-weight: bold;
-        }
-
+        :root { --main-pink: #ffafcc; --hot-pink: #ff4d6d; --bg-dot: #ffe5ec; }
+        body { margin: 0; padding: 0; min-height: 100vh; display: flex; justify-content: center; align-items: center; background-color: var(--bg-dot); background-image: radial-gradient(var(--main-pink) 2px, transparent 2px); background-size: 30px 30px; font-family: 'Pixelify Sans', sans-serif; overflow: hidden; touch-action: manipulation; }
+        .window { background: white; border: 4px solid var(--hot-pink); box-shadow: 8px 8px 0px rgba(251, 111, 146, 0.3); width: 90%; max-width: 380px; border-radius: 12px; overflow: hidden; z-index: 10; }
+        .title-bar { background: var(--hot-pink); color: white; padding: 10px 15px; display: flex; justify-content: space-between; font-weight: bold; }
         .content { padding: 30px 20px; text-align: center; }
         .cat-img { width: 180px; height: 180px; object-fit: contain; margin-bottom: 20px; border-radius: 10px; }
-        
         h1 { color: var(--hot-pink); font-size: 1.6rem; margin: 0 0 20px 0; }
-
         .btn-container { display: flex; justify-content: center; gap: 15px; }
-        .btn {
-            padding: 12px 25px; border: 3px solid black; cursor: pointer;
-            font-family: 'Pixelify Sans', sans-serif; font-size: 1.2rem;
-            font-weight: bold; box-shadow: 4px 4px 0px black; transition: 0.1s;
-        }
+        .btn { padding: 12px 25px; border: 3px solid black; cursor: pointer; font-family: 'Pixelify Sans', sans-serif; font-size: 1.2rem; font-weight: bold; box-shadow: 4px 4px 0px black; transition: 0.1s; }
         .btn:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0px black; }
         .yes-btn { background: #95d5b2; color: black; }
         .no-btn { background: #ff85a1; color: black; }
-
-        /* "No" дарахад гарах том товч */
-        .huge-yes {
-            width: 100%; font-size: 2rem; padding: 25px;
-            background: var(--hot-pink); color: white; margin-top: 20px;
-            animation: pulse 1.5s infinite;
-        }
+        .huge-yes { width: 100%; font-size: 2rem; padding: 25px; background: var(--hot-pink); color: white; margin-top: 20px; animation: pulse 1.5s infinite; }
         @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
-
-        .option-card {
-            background: white; padding: 12px; border-radius: 10px;
-            cursor: pointer; margin-bottom: 10px; border: 2px solid var(--main-pink);
-            text-align: left; color: var(--hot-pink); transition: 0.3s;
-        }
+        .option-card { background: white; padding: 12px; border-radius: 10px; cursor: pointer; margin-bottom: 10px; border: 2px solid var(--main-pink); text-align: left; color: var(--hot-pink); transition: 0.3s; }
         .option-card:hover { background: var(--bg-dot); }
-
-        .back-link {
-            display: block; margin-top: 20px; color: var(--hot-pink);
-            text-decoration: underline; cursor: pointer; font-size: 0.9rem;
-        }
-
-        .mini-letter {
-            background: #fff0f3; color: #333; padding: 15px;
-            border-radius: 10px; border: 2px dashed var(--hot-pink);
-            margin: 15px 0; text-align: left; font-size: 0.9rem;
-        }
+        .back-link { display: block; margin-top: 20px; color: var(--hot-pink); text-decoration: underline; cursor: pointer; font-size: 0.9rem; }
+        .mini-letter { background: #fff0f3; color: #333; padding: 15px; border-radius: 10px; border: 2px dashed var(--hot-pink); margin: 15px 0; text-align: left; font-size: 0.9rem; }
     </style>
 </head>
 <body>
-
     <div class="window">
         <div class="title-bar"><span>LOVE</span><span>_ □ X</span></div>
         <div class="content">
             <div id="step-ask">
                 <div style="color: var(--hot-pink); margin-bottom: 5px;">♥ ♥ ♥</div>
                 <h1>Will you be my Valentine?</h1>
-                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmo0bm9idm8xdm1yZzF0eXJ0ZndxZXI5eHhodm9qdzN3eHh4eHh4eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/c76IJLufpNUMo/giphy.gif" class="cat-img">
+                <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2Z4NnB0N3p6ZndxZXI5eHhodm9qdzN3eHh4eHh4eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/c76IJLufpNUMo/giphy.gif" class="cat-img">
                 <div class="btn-container">
                     <button class="btn yes-btn" onclick="showStep('options')">YES</button>
                     <button class="btn no-btn" onclick="showStep('sad')">NO</button>
                 </div>
             </div>
-
             <div id="step-sad" style="display: none;">
                 <h1 style="color: #666;">Нээрээ гэж үү?... 💔</h1>
-                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHp6bm9nd2p6eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/On7VzRcn_mYAAAAi/giphy.gif" class="cat-img">
+                <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2Z4NnB0N3p6ZndxZXI5eHhodm9qdzN3eHh4eHh4eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/On7VzRcn_mYAAAAi/giphy.gif" class="cat-img">
                 <p style="color: var(--hot-pink);">Зүрх минь өвдөж байна...</p>
                 <button class="btn huge-yes" onclick="showStep('options')">ЗА ЗА, ТИЙМ!</button>
                 <span class="back-link" onclick="showStep('ask')">Буцах</span>
             </div>
-
             <div id="step-options" style="display: none;">
                 <h1>Баярлалаа! ❤️</h1>
-                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHp6bm9nd2p6eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/MDJ9IbxxvDUQM/giphy.gif" class="cat-img">
+                <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3p6bm9nd2p6eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/MDJ9IbxxvDUQM/giphy.gif" class="cat-img">
                 <p style="margin-bottom: 15px;">Болзоогоо сонгоорой:</p>
-                <div class="option-card" onclick="finish('Кино & Пицца 🍕', 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHp6bm9nd2p6eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/vFKqnCdLPNOKc/giphy.gif', 'Хоёулаа хамгийн дуртай киногоо үзээд, халуун пицца идэх хамгийн гоё!')">🎬 Movie & Pizza Night</div>
-                <div class="option-card" onclick="finish('Оройн хоол 🕯️', 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHp6bm9nd2p6eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/11s7Ke7jcNxCHS/giphy.gif', 'Гоё газар чамтайгаа тухтай ярилцаад, оройн хоол идэх романтик байх болно.')">🕯️ Romantic Dinner</div>
+                <div class="option-card" onclick="finish('Кино & Пицца 🍕', 'https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3p6bm9nd2p6eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/vFKqnCdLPNOKc/giphy.gif', 'Хоёулаа хамгийн дуртай киногоо үзээд, халуун пицца идэх хамгийн гоё!')">🎬 Movie & Pizza Night</div>
+                <div class="option-card" onclick="finish('Оройн хоол 🕯️', 'https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3p6bm9nd2p6eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/11s7Ke7jcNxCHS/giphy.gif', 'Гоё газар чамтайгаа тухтай ярилцаад, оройн хоол идэх романтик байх болно.')">🕯️ Romantic Dinner</div>
                 <span class="back-link" onclick="showStep('ask')">← Буцах</span>
             </div>
-
             <div id="step-final" style="display: none;">
                 <h1>Тохирлоо! ❤️</h1>
                 <img id="final-cat" src="" class="cat-img">
                 <div id="personal-message" class="mini-letter"></div>
                 <p style="color: var(--hot-pink); font-weight: bold;">Болзох газар: Манайд!!! ✨</p>
                 <button class="btn yes-btn" style="width: 100%;" onclick="openInstagram()">📩 Надад IG-ээр хэлээрэй</button>
-                <span class="back-link" onclick="showStep('options')">← Өөр болзоо харах</span>
             </div>
         </div>
     </div>
-
     <script>
-        // ӨӨРИЙН INSTAGRAM НЭРЭЭ ЭНД БИЧЭЭРЭЙ
-        const myIG = "eazjrgal"; 
-
-        function showStep(step) {
-            document.getElementById('step-ask').style.display = 'none';
-            document.getElementById('step-sad').style.display = 'none';
-            document.getElementById('step-options').style.display = 'none';
-            document.getElementById('step-final').style.display = 'none';
-            document.getElementById('step-' + step).style.display = 'block';
-        }
-
-        function finish(choice, gifUrl, message) {
-            showStep('final');
-            document.getElementById('final-cat').src = gifUrl;
-            document.getElementById('personal-message').innerText = message;
-            for(let i=0; i<30; i++) createHeart();
-        }
-
-        function openInstagram() {
-            window.location.href = `https://www.instagram.com/${myIG}/`;
-        }
-
-        function createHeart() {
-            const heart = document.createElement('div');
-            heart.innerHTML = '❤️';
-            heart.style.position = 'fixed';
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.top = '-20px';
-            heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
-            document.body.appendChild(heart);
-            heart.animate([{ transform: 'translateY(0)', opacity: 1 }, { transform: `translateY(100vh)`, opacity: 0 }], { duration: 3000 });
-            setTimeout(() => heart.remove(), 3000);
-        }
+        const myIG = "your_username"; // <--- ӨӨРИЙН IG НЭРЭЭ ЭНД БИЧЭЭРЭЙ
+        function showStep(step) { document.getElementById('step-ask').style.display = 'none'; document.getElementById('step-sad').style.display = 'none'; document.getElementById('step-options').style.display = 'none'; document.getElementById('step-final').style.display = 'none'; document.getElementById('step-' + step).style.display = 'block'; }
+        function finish(choice, gifUrl, message) { showStep('final'); document.getElementById('final-cat').src = gifUrl; document.getElementById('personal-message').innerText = message; for(let i=0; i<30; i++) createHeart(); }
+        function openInstagram() { window.location.href = `https://www.instagram.com/${myIG}/`; }
+        function createHeart() { const heart = document.createElement('div'); heart.innerHTML = '❤️'; heart.style.position = 'fixed'; heart.style.left = Math.random() * 100 + 'vw'; heart.style.top = '-20px'; heart.style.fontSize = (Math.random() * 20 + 10) + 'px'; document.body.appendChild(heart); heart.animate([{ transform: 'translateY(0)', opacity: 1 }, { transform: `translateY(100vh)`, opacity: 0 }], { duration: 3000 }); setTimeout(() => heart.remove(), 3000); }
     </script>
 </body>
 </html>
